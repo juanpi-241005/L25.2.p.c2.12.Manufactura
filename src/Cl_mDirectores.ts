@@ -18,6 +18,10 @@ export default class Cl_mDirectores extends Cl_mEmpleado{
         return this.sueldoBase * (this.turnoNocturno === "SI" ? 0.20 : 0);
     }
 
+    bonus(): number{
+        return this.adicional();
+    }
+
     sueldoMensual(): number{
         return this.sueldoBase + this.adicional();
     }

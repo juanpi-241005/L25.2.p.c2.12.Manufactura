@@ -30,6 +30,8 @@ export default class Cl_controlador {
         this.vista.reportarEmpleado({
             dataEmpleado: mEmpleado.toJSON(),
             totalPagado: this.modelo.totalPagado(),
+            totalBonusOperadores: this.modelo.totalBonusOperadores(),
+            totalBonusDirectores: this.modelo.totalBonusDirectores(),
         });
         this.vista.show();
     }

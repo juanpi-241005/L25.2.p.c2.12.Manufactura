@@ -33,12 +33,17 @@ export default class Cl_mEmpleado{
         return 0;
     }
 
+    bonus(){
+        return 0;
+    }
+
     toJSON() {
     return {
       id: this.id,
       nombre: this.nombre,
       sueldoBase: this.sueldoBase,
       sueldoMensual: this.sueldoMensual(),
+      bonus: this.bonus(),
     };
   }
 }

@@ -11,6 +11,12 @@ export default class Cl_vEmpresa extends Cl_vGeneral {
         this.lblTotalPagado = this.crearHTMLElement({
             elementName: "lblTotalPagado",
         });
+        this.lblTotalBonusOperadores = this.crearHTMLElement({
+            elementName: "lblTotalBonusOperadores"
+        });
+        this.lblTotalBonusDirectores = this.crearHTMLElement({
+            elementName: "lblTotalBonusDirectores"
+        });
         this.btAgregarOperador = this.crearHTMLButtonElement({
             elementName: "btAgregarOperador",
             onclick: () => {
@@ -40,16 +46,19 @@ export default class Cl_vEmpresa extends Cl_vGeneral {
     get vDirectores() {
         return this._vDirectores;
     }
-    reportarEmpleado({ dataEmpleado, totalPagado}) {
+    reportarEmpleado({ dataEmpleado, totalPagado, totalBonusOperadores, totalBonusDirectores}) {
         this.dataEmpleado.innerHTML += `
       <td class="colNumber">${dataEmpleado.id}</td>
       <td class="colText">${dataEmpleado.nombre}</td>
       <td class="colCurrency">${`$${dataEmpleado.sueldoBase.toFixed(2)}`}</td>
       <td class="colNumber">${dataEmpleado.horasExtra ? dataEmpleado.horasExtra : "--"}</td>
       <td class="colText">${dataEmpleado.turnoNocturno ? dataEmpleado.turnoNocturno.toString() : "--"}</td>
+      <td class="colCurrency">${`$${dataEmpleado.bonus.toFixed(2)}`}</td>
       <td class="colCurrency">${`$${dataEmpleado.sueldoMensual.toFixed(2)}`}</td>
     `;
         this.lblTotalPagado.innerHTML = totalPagado.toFixed(2);
+        this.lblTotalBonusOperadores.innerHTML = totalBonusOperadores.toFixed(2);
+        this.lblTotalBonusDirectores.innerHTML = totalBonusDirectores.toFixed(2);
     } 
     show({ ver = true } = { ver: true }) {
         super.show({ ver });

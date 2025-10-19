@@ -15,11 +15,15 @@ export default class Cl_mOperadores extends Cl_mEmpleado{
     }
 
     prima(){
-        return 5 * this.horasExtra;
+        return this.horasExtra * 5;
     }
 
     sueldoMensual(){
         return this.sueldoBase + this.prima();
+    }
+
+    bonus(){
+        return this.prima();
     }
 
     toJSON() {

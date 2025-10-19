@@ -6,7 +6,7 @@ import Cl_vEmpresa from "./Cl_vEmpresa.js";
 import { iOperadores } from "./Cl_vOperadores.js";
 import { iDirectores } from "./Cl_vDirectores.js";
 
-export default class Cl_controlados {
+export default class Cl_controlador {
     public modelo: Cl_mEmpresa;
     public vista: Cl_vEmpresa;
     constructor(modelo: Cl_mEmpresa, vista: Cl_vEmpresa) {
@@ -40,6 +40,8 @@ export default class Cl_controlados {
     this.vista.reportarEmpleado({
       dataEmpleado: mEmpleado.toJSON(),
       totalPagado: this.modelo.totalPagado(),
+      totalBonusOperadores: this.modelo.totalBonusOperadores(),
+      totalBonusDirectores: this.modelo.totalBonusDirectores(),
     });
     this.vista.show();
   }

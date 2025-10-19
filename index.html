@@ -34,7 +34,7 @@
         </div>
     </section>
     <section id="mainForm">
-        <h3>Pólizas procesadas</h3>
+        <h3>Empleados Procesados</h3>
         <table>
             <thead>
                 <th>Id</th>
@@ -42,6 +42,7 @@
                 <th>Sueldo Base</th>
                 <th>Horas Extra</th>
                 <th>Turno Nocturno</th>
+                <th>Adicional</th>
                 <th>Sueldo Mensual</th>
             </thead>
             <tbody id="mainForm_dataEmpleado"></tbody>
@@ -54,6 +55,12 @@
         <div class="divSalida">
             <label>Total pagado: $
                 <span id="mainForm_lblTotalPagado"></span>
+            </label>
+            <label>Total Adicional a Operadores: $
+                <span id="mainForm_lblTotalBonusOperadores"></span>
+            </label>
+            <label>Total Adicional a Directores: $
+                <span id="mainForm_lblTotalBonusDirectores"></span>
             </label>
         </div>
     </section>
