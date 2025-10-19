@@ -1,8 +1,14 @@
 *{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+body{
+    background-image: linear-gradient(to right bottom, #075f08, #046317, #016622, #006a2c, #006d36, #00703f, #007448, #007750, #007a5a, #007d63, #00806c, #008375); 
+    color: white; 
+    background-repeat: no-repeat; 
+    min-height: 100vh;
+}
 section {
-  border: 3px solid blue;
+  border: 3px solid green;
   margin-top: 10px;
   padding: 10px;
   border-radius: 3cap;
@@ -10,9 +16,12 @@ section {
 label {
   margin-top: 5px;
 }
+h2{
+  text-align: center; 
+}
 h3 {
   color: white;
-  background-color: blue;
+  background-color: green;
   padding: 3px;
   border-radius: 5cap;
   text-align: center;
@@ -24,9 +33,13 @@ h4 {
   font-weight: normal;
   color: seagreen;
 }
+.tabla {
+  margin: 0 auto;
+  width: 60%; /* O un valor específico */
+}
 button {
   margin-top: 10px;
-  background-color: blue;
+  background-color: green;
   color: white;
   border-radius: 1cap;
   padding: 5px;
@@ -50,6 +63,7 @@ td {
   display: flex;
   flex-direction: column;
   width: 500px;
+  text-align: center;
 }
 .colCurrency {
   text-align: right;
