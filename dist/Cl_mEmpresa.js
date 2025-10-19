@@ -1,5 +1,5 @@
-import Cl_mDirectores from "./Cl_mDirectores";
-import Cl_mOperadores from "./Cl_mOperadores";
+import Cl_mDirectores from "./Cl_mDirectores.js";
+import Cl_mOperadores from "./Cl_mOperadores.js";
 
 export default class Cl_mEmpresa{
     constructor(){
