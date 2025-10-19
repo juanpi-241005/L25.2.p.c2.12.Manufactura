@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANUFACTURA</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <h2>MANUFACTURA</h2>
+    <section id="empleadoForm" hidden>
+        <h3 style="width: 250px;">Sueldos de <span id="empleadoForm_lblTipo"></span></h3>
+        <label>Id:
+            <input type="number" id="empleadoForm_inId"></input>
+        </label>
+        <label>Nombre:
+            <input type="text" id="empleadoForm_inNombre"></input>
+        </label>
+        <label>Sueldo Base:
+            <input type="number" id="empleadoForm_inSueldoBase"></input>
+        </label>
+        <label hidden id="empleadoForm_divInHorasExtra">Horas Extra:
+            <input type="number" id="empleadoForm_inHorasExtra"></input>
+        </label>
+        <label hidden id="empleadoForm_divInTurnoNocturno">Turno Nocturno:
+            <input type="text" id="empleadoForm_inTurnoNocturno"></input>
+        </label>
+        <div>
+            <button id="empleadoForm_btAceptarOperador" hidden>Aceptar</button>
+            <button id="empleadoForm_btAceptarDirector" hidden>Aceptar</button>
+            <button id="empleadoForm_btCancelar">Cancelar</button>
+        </div>
+    </section>
+    <section id="mainForm">
+        <h3>Pólizas procesadas</h3>
+        <table>
+            <thead>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Sueldo Base</th>
+                <th>Horas Extra</th>
+                <th>Turno Nocturno</th>
+                <th>Sueldo Mensual</th>
+            </thead>
+            <tbody id="mainForm_dataEmpleado"></tbody>
+        </table>
+        <div class="divBotones">
+            <button id="mainForm_btAgregarOperador">+Empleado Operador</button>
+            <button id="mainForm_btAgregarDirector">+Empleado Director</button>
+        </div>
+        <h3>Info de la de la Empresa</h3>
+        <div class="divSalida">
+            <label>Total pagado: $
+                <span id="mainForm_lblTotalPagado"></span>
+            </label>
+        </div>
+    </section>
+    <script type="module">
+        import Cl_index from "./dist/Cl_index.js";
+        new Cl_index()
+    </script>
+</body>
+</html>
