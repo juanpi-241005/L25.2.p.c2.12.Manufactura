@@ -44,10 +44,10 @@ export default class Cl_vEmpresa extends Cl_vGeneral {
         this.dataEmpleado.innerHTML += `
       <td class="colNumber">${dataEmpleado.id}</td>
       <td class="colText">${dataEmpleado.nombre}</td>
-      <td class="colCurrency">${`Bs.${dataEmpleado.sueldoBase.toFixed(2)}`}</td>
+      <td class="colCurrency">${`$${dataEmpleado.sueldoBase.toFixed(2)}`}</td>
       <td class="colNumber">${dataEmpleado.horasExtra ? dataEmpleado.horasExtra : "--"}</td>
       <td class="colText">${dataEmpleado.turnoNocturno ? dataEmpleado.turnoNocturno.toString() : "--"}</td>
-      <td class="colCurrency">${`Bs.${dataEmpleado.sueldoMensual.toFixed(2)}`}</td>
+      <td class="colCurrency">${`$${dataEmpleado.sueldoMensual.toFixed(2)}`}</td>
     `;
         this.lblTotalPagado.innerHTML = totalPagado.toFixed(2);
     } 
