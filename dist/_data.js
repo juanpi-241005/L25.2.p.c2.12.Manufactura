@@ -6,9 +6,9 @@ empleadosOperadores = [
     { id: 66, nombre: "Joe", sueldoBase: 200, horasExtra: 15 },
 ];
 empleadosDirectores = [
-    { id: 22, nombre: "Ana", sueldoBase: 100, turnoNocturno: "NO" },
-    { id: 44, nombre: "Eva", sueldoBase: 50, turnoNocturno: "SI" },
-    { id: 33, nombre: "Liz", sueldoBase: 200, turnoNocturno: "SI" },
-    { id: 88, nombre: "Emy", sueldoBase: 100, turnoNocturno: "NO" },
+    { id: 22, nombre: "Ana", sueldoBase: 100, turnoNocturno: false },
+    { id: 44, nombre: "Eva", sueldoBase: 50, turnoNocturno: true },
+    { id: 33, nombre: "Liz", sueldoBase: 200, turnoNocturno: true },
+    { id: 88, nombre: "Emy", sueldoBase: 100, turnoNocturno: false },
 ];
 export { empleadosOperadores, empleadosDirectores };
