@@ -1,6 +1,5 @@
-import Cl_mDirectores from "./Cl_mDirectores.js";
 import Cl_mOperadores from "./Cl_mOperadores.js";
-
+import Cl_mDirectores from "./Cl_mDirectores.js";
 export default class Cl_controlador {
     constructor(modelo, vista) {
         this.modelo = modelo;

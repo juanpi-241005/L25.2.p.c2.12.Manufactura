@@ -1,5 +1,4 @@
 import Cl_vEmpleado from "./Cl_vEmpleado.js";
-
 export default class Cl_vOperadores extends Cl_vEmpleado {
     constructor() {
         super();

@@ -1,5 +1,5 @@
-export default class Cl_vGeneral{
-    constructor({ formName }){
+export default class Cl_vGeneral {
+    constructor({ formName }) {
         this._formName = "";
         this._vista = null;
         this._controlador = null;
@@ -9,30 +9,26 @@ export default class Cl_vGeneral{
             isForm: true,
         });
     }
-
     set formName(formName) {
         this._formName = formName;
     }
     get formName() {
         return this._formName;
     }
-
     set vista(vista) {
         this._vista = vista;
     }
     get vista() {
         return this._vista;
     }
-
     set controlador(controlador) {
         this._controlador = controlador;
     }
     get controlador() {
         return this._controlador;
     }
-    
-    crearHTMLElement({ elementName, isForm = false}){
-        let domElementName = isForm 
+    crearHTMLElement({ elementName, isForm = false, }) {
+        let domElementName = isForm
             ? elementName
             : `${this.formName}_${elementName}`;
         let domElement = document.getElementById(domElementName);
@@ -43,7 +39,6 @@ export default class Cl_vGeneral{
         }
         return domElement;
     }
-
     crearHTMLInputElement({ elementName, type = "text" }) {
         let domElementName = `${this.formName}_${elementName}`;
         let domElement = document.getElementById(domElementName);
@@ -57,7 +52,6 @@ export default class Cl_vGeneral{
         }
         return domElement;
     }
-    
     crearHTMLButtonElement({ elementName, onclick, }) {
         let domElementName = `${this.formName}_${elementName}`;
         let domElement = document.getElementById(domElementName);

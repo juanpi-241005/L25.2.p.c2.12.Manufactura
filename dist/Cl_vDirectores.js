@@ -1,6 +1,5 @@
 import Cl_vEmpleado from "./Cl_vEmpleado.js";
-
-export default class Cl_vDirectivos extends Cl_vEmpleado {
+export default class Cl_vDirectores extends Cl_vEmpleado {
     constructor() {
         super();
         this.divInTurnoNocturno = this.crearHTMLElement({ elementName: "divInTurnoNocturno" });
@@ -29,7 +28,7 @@ export default class Cl_vDirectivos extends Cl_vEmpleado {
         return this.inTurnoNocturnoS.checked;
     }
     show({ ver = true } = { ver: true }) {
-        super.show({ ver, nombreTipo: "Directivo" });
+        super.show({ ver, nombreTipo: "Director" });
         this.inTurnoNocturnoN.checked = true;
         this.inTurnoNocturnoS.checked = false;
         this.divInTurnoNocturno.hidden = ver === false;
