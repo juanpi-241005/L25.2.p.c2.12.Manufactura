@@ -4,6 +4,7 @@ export default class Cl_vGeneral {
   private _formName: string = "";
   private _vista: HTMLElement | null = null;
   private _controlador: Cl_controlador | null = null;
+
   constructor({ formName }: { formName: string }) {
     this.formName = formName;
     this.vista = this.crearHTMLElement({
@@ -11,24 +12,28 @@ export default class Cl_vGeneral {
       isForm: true,
     });
   }
+
   set formName(formName: string) {
     this._formName = formName;
   }
   get formName(): string {
     return this._formName;
   }
+
   set vista(vista: HTMLElement) {
     this._vista = vista;
   }
   get vista(): HTMLElement | null {
     return this._vista;
   }
+
   set controlador(controlador: Cl_controlador) {
     this._controlador = controlador;
   }
   get controlador(): Cl_controlador | null {
     return this._controlador;
   }
+
   crearHTMLElement({
     elementName,
     isForm = false,
@@ -47,10 +52,13 @@ export default class Cl_vGeneral {
     }
     return domElement;
   }
+
   crearHTMLInputElement({
     elementName,
+    type = "text"
   }: {
     elementName: string;
+    type?: string;
   }): HTMLInputElement {
     let domElementName = `${this.formName}_${elementName}`;
     let domElement = document.getElementById(
@@ -61,8 +69,12 @@ export default class Cl_vGeneral {
       alert(msg);
       throw new Error(msg);
     }
+    if (type) {
+      domElement.type = type;
+    }
     return domElement;
   }
+
   crearHTMLButtonElement({
     elementName,
     onclick,
@@ -82,6 +94,7 @@ export default class Cl_vGeneral {
     if (onclick) domElement.onclick = onclick;
     return domElement;
   }
+
   show({ ver = true }: { ver?: boolean } = { ver: true }): void {
     if (this.vista) this.vista.style.display = ver ? "flex" : "none";
   }

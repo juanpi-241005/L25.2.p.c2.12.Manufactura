@@ -1,8 +1,8 @@
 export default class Cl_vGeneral{
     constructor({ formName }){
         this._formName = "";
-        this._controlador = null;
         this._vista = null;
+        this._controlador = null;
         this.formName = formName;
         this.vista = this.crearHTMLElement({
             elementName: this.formName,
@@ -44,13 +44,16 @@ export default class Cl_vGeneral{
         return domElement;
     }
 
-    crearHTMLInputElement({ elementName, }) {
+    crearHTMLInputElement({ elementName, type = "text" }) {
         let domElementName = `${this.formName}_${elementName}`;
         let domElement = document.getElementById(domElementName);
         if (!domElement) {
             let msg = `Elemento ${domElementName} no encontrado`;
             alert(msg);
             throw new Error(msg);
+        }
+        if (type) {
+            domElement.type = type;
         }
         return domElement;
     }
@@ -67,7 +70,6 @@ export default class Cl_vGeneral{
             domElement.onclick = onclick;
         return domElement;
     }
-
     show({ ver = true } = { ver: true }) {
         if (this.vista)
             this.vista.style.display = ver ? "flex" : "none";

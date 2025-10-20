@@ -4,7 +4,14 @@ export default class Cl_vDirectivos extends Cl_vEmpleado {
     constructor() {
         super();
         this.divInTurnoNocturno = this.crearHTMLElement({ elementName: "divInTurnoNocturno" });
-        this.inTurnoNocturno = this.crearHTMLInputElement({ elementName: "inTurnoNocturno" });
+        this.inTurnoNocturnoS = this.crearHTMLInputElement({
+            elementName: "inTurnoNocturnoS",
+            type: "radio"
+        });
+        this.inTurnoNocturnoN = this.crearHTMLInputElement({
+            elementName: "inTurnoNocturnoN",
+            type: "radio"
+        });
         this.btAceptar = this.crearHTMLButtonElement({
             elementName: "btAceptarDirector",
             onclick: () => {
@@ -19,11 +26,12 @@ export default class Cl_vDirectivos extends Cl_vEmpleado {
         });
     }
     get turnoNocturno() {
-        return this.inTurnoNocturno.value;
+        return this.inTurnoNocturnoS.checked;
     }
     show({ ver = true } = { ver: true }) {
         super.show({ ver, nombreTipo: "Directivo" });
-        this.inTurnoNocturno.value = "";
+        this.inTurnoNocturnoN.checked = true;
+        this.inTurnoNocturnoS.checked = false;
         this.divInTurnoNocturno.hidden = ver === false;
         this.btAceptar.hidden = ver === false;
     }

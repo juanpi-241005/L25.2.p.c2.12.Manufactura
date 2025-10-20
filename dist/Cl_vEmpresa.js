@@ -1,7 +1,7 @@
 import Cl_vOperadores from "./Cl_vOperadores.js";
 import Cl_vDirectores from "./Cl_vDirectores.js";
 import Cl_vGeneral from "./Cl_vGeneral.js";
-// Define una interfaz para el controlador
+
 export default class Cl_vEmpresa extends Cl_vGeneral {
     constructor() {
         super({ formName: "mainForm" });
@@ -47,12 +47,16 @@ export default class Cl_vEmpresa extends Cl_vGeneral {
         return this._vDirectores;
     }
     reportarEmpleado({ dataEmpleado, totalPagado, totalBonusOperadores, totalBonusDirectores}) {
+        const turnoNocturnoTexto = dataEmpleado.turnoNocturno !== undefined
+            ? (dataEmpleado.turnoNocturno ? "SI" : "NO")
+            : "--";
+
         this.dataEmpleado.innerHTML += `
       <td class="colNumber">${dataEmpleado.id}</td>
       <td class="colText">${dataEmpleado.nombre}</td>
       <td class="colCurrency">${`$${dataEmpleado.sueldoBase.toFixed(2)}`}</td>
       <td class="colNumber">${dataEmpleado.horasExtra ? dataEmpleado.horasExtra : "--"}</td>
-      <td class="colText">${dataEmpleado.turnoNocturno ? dataEmpleado.turnoNocturno.toString() : "--"}</td>
+      <td class="colText">${turnoNocturnoTexto}</td> <!-- ✅ Aquí usa "SI"/"NO" -->
       <td class="colCurrency">${`$${dataEmpleado.bonus.toFixed(2)}`}</td>
       <td class="colCurrency">${`$${dataEmpleado.sueldoMensual.toFixed(2)}`}</td>
     `;

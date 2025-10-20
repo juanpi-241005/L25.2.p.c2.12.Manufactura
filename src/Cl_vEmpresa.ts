@@ -7,13 +7,12 @@ interface iEmpleado {
   id: number;
   nombre: string;
   horasExtra?: number;
-  turnoNocturno?: string;
+  turnoNocturno?: boolean;
   sueldoBase: number;
   bonus: number;
   sueldoMensual: number;
 }
 
-// Define una interfaz para el controlador
 export default class Cl_vEmpresa extends Cl_vGeneral {
   private _vOperadores: Cl_vOperadores;
   private _vDirectores: Cl_vDirectores;
@@ -57,9 +56,8 @@ export default class Cl_vEmpresa extends Cl_vGeneral {
     this.vOperadores.show({ ver: false });
     this.vDirectores.show({ ver: false });
   }
+
   set controlador(controlador: Cl_controlador) {
-    // Invoke the base-class setter via its property descriptor to avoid the
-    // compile-time 'super' access restriction on private setters.
     const baseProto = Object.getPrototypeOf(Object.getPrototypeOf(this));
     const desc = baseProto
       ? Object.getOwnPropertyDescriptor(baseProto, "controlador")
@@ -71,12 +69,15 @@ export default class Cl_vEmpresa extends Cl_vGeneral {
     this.vOperadores.controlador = controlador;
     this.vDirectores.controlador = controlador;
   }
+
   get vOperadores() {
     return this._vOperadores;
   }
+
   get vDirectores() {
     return this._vDirectores;
   }
+
   reportarEmpleado({
     dataEmpleado,
     totalPagado,
@@ -88,12 +89,16 @@ export default class Cl_vEmpresa extends Cl_vGeneral {
     totalBonusOperadores: number;
     totalBonusDirectores: number;
   }): void {
+    const turnoNocturnoTexto = dataEmpleado.turnoNocturno !== undefined 
+      ? (dataEmpleado.turnoNocturno ? "SI" : "NO") 
+      : "--";
+
     this.dataEmpleado.innerHTML += `
       <td class="colNumber">${dataEmpleado.id}</td>
       <td class="colText">${`${dataEmpleado.nombre}`}</td>
       <td class="colNumber">${`$${dataEmpleado.sueldoBase}%`}</td>
       <td class="colNumber">${dataEmpleado.horasExtra ? dataEmpleado.horasExtra : "--"}</td>
-      <td class="colText">${dataEmpleado.turnoNocturno ? dataEmpleado.turnoNocturno : "--"}</td>
+      <td class="colText">${turnoNocturnoTexto}</td> <!-- ✅ Aquí usa "SI"/"NO" -->
       <td class="colCurrency">${`$${dataEmpleado.bonus.toFixed(2)}`}</td>
       <td class="colCurrency">${`$${dataEmpleado.sueldoMensual.toFixed(2)}`}</td>
     `;

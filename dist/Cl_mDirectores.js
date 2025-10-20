@@ -3,7 +3,7 @@ import Cl_mEmpleado from "./Cl_mEmpleado.js";
 export default class Cl_mDirectores extends Cl_mEmpleado{
     constructor({id, nombre, sueldoBase, turnoNocturno}){
         super({id, nombre, sueldoBase})
-        this._turnoNocturno = "";
+        this._turnoNocturno = false;
         this.turnoNocturno = turnoNocturno
     }
 
@@ -15,7 +15,7 @@ export default class Cl_mDirectores extends Cl_mEmpleado{
     }
 
     adicional(){
-        return this.sueldoBase * (this.turnoNocturno === "SI" ? 0.20 : 0);
+        return this.sueldoBase * (this.turnoNocturno === true ? 0.20 : 0);
     }
 
     bonus(){
