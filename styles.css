@@ -12,6 +12,7 @@ section {
   margin-top: 10px;
   padding: 10px;
   border-radius: 3cap;
+  margin: 0 auto;
 }
 label {
   margin-top: 5px;
@@ -32,10 +33,6 @@ h4 {
   font-style: italic;
   font-weight: normal;
   color: seagreen;
-}
-.tabla {
-  margin: 0 auto;
-  width: 60%; /* O un valor específico */
 }
 button {
   margin-top: 10px;
