@@ -6,26 +6,21 @@ export default class Cl_mDirectores extends Cl_mEmpleado{
         super({id, nombre, sueldoBase})
         this.turnoNocturno = turnoNocturno
     }
-
     set turnoNocturno(turnoNocturno: boolean){
         this._turnoNocturno = turnoNocturno;
     }
     get turnoNocturno(): boolean{
         return this._turnoNocturno;
     }
-
     adicional(): number{
-        return this.sueldoBase * (this.turnoNocturno === true ? 0.20 : 0);
+        return this.sueldoMenosCuotaSindical() * (this.turnoNocturno === true ? 0.20 : 0);
     }
-
     bonus(): number{
         return this.adicional();
     }
-
     sueldoMensual(): number{
-        return this.sueldoBase + this.adicional();
+        return super.sueldoMensual() + this.adicional();
     }
-
     toJSON() {
      return {
        ...super.toJSON(),

@@ -4,7 +4,6 @@ export default class Cl_vGeneral {
   private _formName: string = "";
   private _vista: HTMLElement | null = null;
   private _controlador: Cl_controlador | null = null;
-
   constructor({ formName }: { formName: string }) {
     this.formName = formName;
     this.vista = this.crearHTMLElement({
@@ -19,14 +18,12 @@ export default class Cl_vGeneral {
   get formName(): string {
     return this._formName;
   }
-
   set vista(vista: HTMLElement) {
     this._vista = vista;
   }
   get vista(): HTMLElement | null {
     return this._vista;
   }
-
   set controlador(controlador: Cl_controlador) {
     this._controlador = controlador;
   }
@@ -94,7 +91,6 @@ export default class Cl_vGeneral {
     if (onclick) domElement.onclick = onclick;
     return domElement;
   }
-
   show({ ver = true }: { ver?: boolean } = { ver: true }): void {
     if (this.vista) this.vista.style.display = ver ? "flex" : "none";
   }

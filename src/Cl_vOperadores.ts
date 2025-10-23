@@ -5,7 +5,6 @@ interface iOperadores {
   sueldoBase: number;
   horasExtra: number;
 }
-
 export default class Cl_vOperadores extends Cl_vEmpleado {
     private divInHorasExtra: HTMLElement;
     private inHorasExtra: HTMLInputElement;

@@ -9,10 +9,10 @@ interface iEmpleado {
   horasExtra?: number;
   turnoNocturno?: boolean;
   sueldoBase: number;
+  sueldoMenosCuotaSindical: number;
   bonus: number;
   sueldoMensual: number;
 }
-
 export default class Cl_vEmpresa extends Cl_vGeneral {
   private _vOperadores: Cl_vOperadores;
   private _vDirectores: Cl_vDirectores;
@@ -56,7 +56,6 @@ export default class Cl_vEmpresa extends Cl_vGeneral {
     this.vOperadores.show({ ver: false });
     this.vDirectores.show({ ver: false });
   }
-
   set controlador(controlador: Cl_controlador) {
     const baseProto = Object.getPrototypeOf(Object.getPrototypeOf(this));
     const desc = baseProto
@@ -65,7 +64,6 @@ export default class Cl_vEmpresa extends Cl_vGeneral {
     if (desc && desc.set) {
       (desc.set as any).call(this, controlador);
     }
-
     this.vOperadores.controlador = controlador;
     this.vDirectores.controlador = controlador;
   }
@@ -73,7 +71,6 @@ export default class Cl_vEmpresa extends Cl_vGeneral {
   get vOperadores() {
     return this._vOperadores;
   }
-
   get vDirectores() {
     return this._vDirectores;
   }
@@ -92,11 +89,10 @@ export default class Cl_vEmpresa extends Cl_vGeneral {
     const turnoNocturnoTexto = dataEmpleado.turnoNocturno !== undefined 
       ? (dataEmpleado.turnoNocturno ? "SI" : "NO") 
       : "--";
-
     this.dataEmpleado.innerHTML += `
       <td class="colNumber">${dataEmpleado.id}</td>
       <td class="colText">${`${dataEmpleado.nombre}`}</td>
-      <td class="colNumber">${`$${dataEmpleado.sueldoBase}%`}</td>
+      <td class="colNumber">${`$${dataEmpleado.sueldoMenosCuotaSindical}`}</td>
       <td class="colNumber">${dataEmpleado.horasExtra ? dataEmpleado.horasExtra : "--"}</td>
       <td class="colText">${turnoNocturnoTexto}</td> <!-- ✅ Aquí usa "SI"/"NO" -->
       <td class="colCurrency">${`$${dataEmpleado.bonus.toFixed(2)}`}</td>

@@ -19,11 +19,9 @@ export default class Cl_mEmpresa{
     totalPagado(): number{
         return this.acSueldoMensual;
     }
-
     totalBonusOperadores(): number{
         return this.acBonusOperadores;
     }
-
     totalBonusDirectores(): number{
         return this.acBonusDirectores;
     }

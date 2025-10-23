@@ -22,7 +22,7 @@ export default class Cl_vDirectores extends Cl_vEmpleado {
       elementName: "inTurnoNocturnoN",
       type: "radio"
     });
-
+    
     this.btAceptar = this.crearHTMLButtonElement({
       elementName: "btAceptarDirector",
       onclick: () => this.controlador?.procesarEmpleadoDirector({

@@ -14,8 +14,8 @@ interface iDirectores {
 let empleadosOperadores: iOperadores[], empleadosDirectores: iDirectores[];
 empleadosOperadores = [
   { id: 11, nombre: "Luis", sueldoBase: 100, horasExtra: 10 },
-  { id: 77, nombre: "Ray", sueldoBase: 160, horasExtra: 20 },
-  { id: 55, nombre: "Leo", sueldoBase: 50, horasExtra: 25 },
+  { id: 77, nombre: "Ray", sueldoBase: 60, horasExtra: 20 },
+  { id: 55, nombre: "Leo", sueldoBase: 150, horasExtra: 25 },
   { id: 66, nombre: "Joe", sueldoBase: 200, horasExtra: 15 },
 ];
 empleadosDirectores = [

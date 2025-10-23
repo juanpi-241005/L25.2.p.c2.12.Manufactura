@@ -25,6 +25,9 @@ export default class Cl_mEmpleado {
     get sueldoBase() {
         return this._sueldoBase;
     }
+    sueldoMenosCuotaSindical() {
+        return 0;
+    }
     sueldoMensual() {
         return 0;
     }
@@ -36,6 +39,7 @@ export default class Cl_mEmpleado {
             id: this.id,
             nombre: this.nombre,
             sueldoBase: this.sueldoBase,
+            sueldoMenosCuotaSindical: this.sueldoMenosCuotaSindical(),
             sueldoMensual: this.sueldoMensual(),
             bonus: this.bonus(),
         };

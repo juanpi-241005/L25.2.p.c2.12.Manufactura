@@ -58,7 +58,7 @@ export default class Cl_vEmpresa extends Cl_vGeneral {
         this.dataEmpleado.innerHTML += `
       <td class="colNumber">${dataEmpleado.id}</td>
       <td class="colText">${`${dataEmpleado.nombre}`}</td>
-      <td class="colNumber">${`$${dataEmpleado.sueldoBase}`}</td>
+      <td class="colNumber">${`$${dataEmpleado.sueldoMenosCuotaSindical}`}</td>
       <td class="colNumber">${dataEmpleado.horasExtra ? dataEmpleado.horasExtra : "--"}</td>
       <td class="colText">${turnoNocturnoTexto}</td> <!-- ✅ Aquí usa "SI"/"NO" -->
       <td class="colCurrency">${`$${dataEmpleado.bonus.toFixed(2)}`}</td>
