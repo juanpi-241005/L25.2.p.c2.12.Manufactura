@@ -16,6 +16,9 @@ export default class Cl_vEmpresa extends Cl_vGeneral {
         this.lblTotalBonusDirectores = this.crearHTMLElement({
             elementName: "lblTotalBonusDirectores"
         });
+        this.lblTotalBonoNocturno = this.crearHTMLElement({
+            elementName: "lblTotalBonoNocturno"
+        });
         this.btAgregarOperador = this.crearHTMLButtonElement({
             elementName: "btAgregarOperador",
             onclick: () => {
@@ -51,14 +54,14 @@ export default class Cl_vEmpresa extends Cl_vGeneral {
     get vDirectores() {
         return this._vDirectores;
     }
-    reportarEmpleado({ dataEmpleado, totalPagado, totalBonusOperadores, totalBonusDirectores, }) {
+    reportarEmpleado({ dataEmpleado, totalPagado, totalBonusOperadores, totalBonusDirectores, totalBonoNocturno, }) {
         const turnoNocturnoTexto = dataEmpleado.turnoNocturno !== undefined
             ? (dataEmpleado.turnoNocturno ? "SI" : "NO")
             : "--";
         this.dataEmpleado.innerHTML += `
       <td class="colNumber">${dataEmpleado.id}</td>
       <td class="colText">${`${dataEmpleado.nombre}`}</td>
-      <td class="colNumber">${`$${dataEmpleado.sueldoBase}`}</td>
+      <td class="colNumber">${`$${dataEmpleado.sueldoBase}%`}</td>
       <td class="colNumber">${dataEmpleado.horasExtra ? dataEmpleado.horasExtra : "--"}</td>
       <td class="colText">${turnoNocturnoTexto}</td> <!-- ✅ Aquí usa "SI"/"NO" -->
       <td class="colCurrency">${`$${dataEmpleado.bonus.toFixed(2)}`}</td>
@@ -67,6 +70,7 @@ export default class Cl_vEmpresa extends Cl_vGeneral {
         this.lblTotalPagado.innerHTML = totalPagado.toFixed(2);
         this.lblTotalBonusOperadores.innerHTML = totalBonusOperadores.toFixed(2);
         this.lblTotalBonusDirectores.innerHTML = totalBonusDirectores.toFixed(2);
+        this.lblTotalBonoNocturno.innerHTML = totalBonoNocturno.toFixed(2);
     }
     show({ ver = true } = { ver: true }) {
         super.show({ ver });

@@ -31,6 +31,7 @@ export default class Cl_controlador {
             totalPagado: this.modelo.totalPagado(),
             totalBonusOperadores: this.modelo.totalBonusOperadores(),
             totalBonusDirectores: this.modelo.totalBonusDirectores(),
+            totalBonoNocturno: this.modelo.totalBonoNocturno(),
         });
         this.vista.show();
     }

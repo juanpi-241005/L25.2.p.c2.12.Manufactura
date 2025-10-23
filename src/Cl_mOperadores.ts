@@ -15,7 +15,11 @@ export default class Cl_mOperadores extends Cl_mEmpleado{
     }
 
     prima(): number{
-        return 5 * this.horasExtra;
+        return (5 * this.horasExtra) + this.bonoNocturno();
+    }
+
+    bonoNocturno(){
+        return (this.horasExtra > 20 ? 40 : 0)
     }
 
     bonus(): number{

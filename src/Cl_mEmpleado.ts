@@ -33,6 +33,10 @@ export default class Cl_mEmpleado{
         return 0;
     }
 
+    bonoNocturno(): number{
+        return 0;
+    }
+
     bonus(): number{
         return 0;
     }
@@ -44,6 +48,7 @@ export default class Cl_mEmpleado{
       sueldoBase: this.sueldoBase,
       sueldoMensual: this.sueldoMensual(),
       bonus: this.bonus(),
+      bonoNocturno: this.bonoNocturno(),
     };
   }    
 }
