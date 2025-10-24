@@ -12,19 +12,13 @@ export default class Cl_mOperadores extends Cl_mEmpleado {
         return this._horasExtra;
     }
     prima() {
-        return (5 * this.horasExtra) + this.bonoNocturno();
-    }
-    bonoNocturno() {
-        return (this.horasExtra > 20 ? 40 : 0);
+        return (5 * this.horasExtra);
     }
     bonus() {
         return this.prima();
     }
-    sueldoMenosCuotaSindical() {
-        return this.sueldoBase * 0.98;
-    }
     sueldoMensual() {
-        return this.sueldoMenosCuotaSindical() + this.prima();
+        return super.sueldoMensual() + this.prima();
     }
     toJSON() {
         return Object.assign(Object.assign({}, super.toJSON()), { horasExtra: this.horasExtra });

@@ -5,13 +5,11 @@ export default class Cl_mEmpresa {
         this.acSueldoMensual = 0;
         this.acBonusOperadores = 0;
         this.acBonusDirectores = 0;
-        this.acBonoNocturno = 0;
     }
     procesarEmpleado(empleado) {
         this.acSueldoMensual += empleado.sueldoMensual();
         if (empleado instanceof Cl_mOperadores) {
             this.acBonusOperadores += empleado.bonus();
-            this.acBonoNocturno += empleado.bonoNocturno();
         }
         else if (empleado instanceof Cl_mDirectores) {
             this.acBonusDirectores += empleado.bonus();
@@ -25,8 +23,5 @@ export default class Cl_mEmpresa {
     }
     totalBonusDirectores() {
         return this.acBonusDirectores;
-    }
-    totalBonoNocturno() {
-        return this.acBonoNocturno;
     }
 }

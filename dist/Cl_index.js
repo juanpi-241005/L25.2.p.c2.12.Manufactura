@@ -23,10 +23,10 @@ export default class Cl_index {
         this.controlador.procesarEmpleadoOperador(new Cl_mOperadores(empleadosOperadores[0]));
         this.controlador.procesarEmpleadoOperador(new Cl_mOperadores(empleadosOperadores[1]));
         this.controlador.procesarEmpleadoOperador(new Cl_mOperadores(empleadosOperadores[2]));
-        //this.controlador.procesarEmpleadoOperador(new Cl_mOperadores(empleadosOperadores[3]));
+        this.controlador.procesarEmpleadoOperador(new Cl_mOperadores(empleadosOperadores[3]));
         this.controlador.procesarEmpleadoDirector(new Cl_mDirectores(empleadosDirectores[0]));
         this.controlador.procesarEmpleadoDirector(new Cl_mDirectores(empleadosDirectores[1]));
         this.controlador.procesarEmpleadoDirector(new Cl_mDirectores(empleadosDirectores[2]));
-        //this.controlador.procesarEmpleadoDirector(new Cl_mDirectores(empleadosDirectores[3]));
+        this.controlador.procesarEmpleadoDirector(new Cl_mDirectores(empleadosDirectores[3]));
     }
 }
