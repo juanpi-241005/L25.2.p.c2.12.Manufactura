@@ -1,9 +1,9 @@
-import Cl_mEmpresa from "./Cl_mEmpresa.js";
-import Cl_mEmpleado from "./Cl_mEmpleado.js";
-import Cl_mOperadores from "./Cl_mOperadores.js";
-import Cl_mDirectores from "./Cl_mDirectores.js";
-import Cl_vEmpresa from "./Cl_vEmpresa.js";
-import { iOperadores } from "./Cl_vOperadores.js";
+import Cl_mEmpresa from "./models/Cl_mEmpresa.js";
+import Cl_mEmpleado from "./models/Cl_mEmpleado.js";
+import Cl_mOperadores from "./models/Cl_mOperadores.js";
+import Cl_mDirectores from "./models/Cl_mDirectores.js";
+import Cl_vEmpresa from "./views/Cl_vEmpresa.js";
+import { iOperadores } from "./views/Cl_vOperadores.js";
 import { iDirectores } from "./Cl_vDirectores.js";
 
 export default class Cl_controlador {

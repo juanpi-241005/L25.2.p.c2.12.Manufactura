@@ -1,7 +1,7 @@
 import Cl_vDirectores from "./Cl_vDirectores.js";
 import Cl_vOperadores from "./Cl_vOperadores.js";
-import Cl_controlador from "./Cl_controlador.js";
-import Cl_vGeneral from "./Cl_vGeneral.js";
+import Cl_controlador from "../Cl_controlador.js";
+import Cl_vGeneral from "../Cl_vGeneral.js";
 
 interface iEmpleado {
   id: number;
