@@ -10,20 +10,19 @@ export default class Cl_mEmpresa{
     procesarEmpleado(empleado: Cl_mEmpleado){
         this.acSueldoMensual += empleado.sueldoMensual();
 
-        if(empleado instanceof Cl_mOperadores)
+        if(empleado instanceof Cl_mOperadores){
             this.acBonusOperadores += empleado.bonus();
-        else if(empleado instanceof Cl_mDirectores)
+        } else if(empleado instanceof Cl_mDirectores){
             this.acBonusDirectores += empleado.bonus();
+        }
     }
 
     totalPagado(): number{
         return this.acSueldoMensual;
     }
-
     totalBonusOperadores(): number{
         return this.acBonusOperadores;
     }
-
     totalBonusDirectores(): number{
         return this.acBonusDirectores;
     }

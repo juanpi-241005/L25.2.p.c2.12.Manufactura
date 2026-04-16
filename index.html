@@ -25,7 +25,14 @@
             <input type="number" id="empleadoForm_inHorasExtra"></input>
         </label>
         <label hidden id="empleadoForm_divInTurnoNocturno">Turno Nocturno:
-            <input type="text" id="empleadoForm_inTurnoNocturno"></input>
+            <div style="display: flex; gap: 10px; margin-top: 5px;">
+                <label style="display: flex; align-items: center;">
+                    <input type="radio" name="turnoNocturno" id="empleadoForm_inTurnoNocturnoS" value="true"> Sí
+                </label>
+                <label style="display: flex; align-items: center;">
+                    <input type="radio" name="turnoNocturno" id="empleadoForm_inTurnoNocturnoN" value="false" checked> No
+                </label>
+            </div>    
         </label>
         <div>
             <button id="empleadoForm_btAceptarOperador" hidden>Aceptar</button>

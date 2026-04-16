@@ -14,14 +14,12 @@ export default class Cl_mEmpleado{
     get id(): number{
         return this._id;
     }
-
     set nombre(nombre: string){
         this._nombre = nombre;
     }
     get nombre(): string{
         return this._nombre;
     }
-
     set sueldoBase(sueldoBase: number){
         this._sueldoBase = +sueldoBase;
     }
@@ -29,14 +27,13 @@ export default class Cl_mEmpleado{
         return this._sueldoBase;
     }
 
-    sueldoMensual(): number{
-        return 0;
+    sueldoMensual(){
+        return (this.sueldoBase * 0.98) + this.bonus();
     }
 
     bonus(): number{
         return 0;
     }
-
     toJSON() {
     return {
       id: this.id,

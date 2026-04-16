@@ -11,6 +11,7 @@ export default class Cl_vGeneral {
       isForm: true,
     });
   }
+
   set formName(formName: string) {
     this._formName = formName;
   }
@@ -29,6 +30,7 @@ export default class Cl_vGeneral {
   get controlador(): Cl_controlador | null {
     return this._controlador;
   }
+
   crearHTMLElement({
     elementName,
     isForm = false,
@@ -47,10 +49,13 @@ export default class Cl_vGeneral {
     }
     return domElement;
   }
+
   crearHTMLInputElement({
     elementName,
+    type = "text"
   }: {
     elementName: string;
+    type?: string;
   }): HTMLInputElement {
     let domElementName = `${this.formName}_${elementName}`;
     let domElement = document.getElementById(
@@ -61,8 +66,12 @@ export default class Cl_vGeneral {
       alert(msg);
       throw new Error(msg);
     }
+    if (type) {
+      domElement.type = type;
+    }
     return domElement;
   }
+
   crearHTMLButtonElement({
     elementName,
     onclick,

@@ -13,7 +13,6 @@ export default class Cl_controlador {
     this.modelo = modelo;
     this.vista = vista;
   }
-
   procesarEmpleadoOperador(data: iOperadores){
     let mOperadores = new Cl_mOperadores({
         id: data.id,
@@ -24,7 +23,6 @@ export default class Cl_controlador {
     this.modelo.procesarEmpleado(mOperadores);
     this.reportarEmpleado({ mEmpleado: mOperadores});
   }
-
   procesarEmpleadoDirector(data: iDirectores){
     let mDirectores = new Cl_mDirectores({
         id: data.id,
@@ -35,7 +33,6 @@ export default class Cl_controlador {
     this.modelo.procesarEmpleado(mDirectores);
     this.reportarEmpleado({ mEmpleado: mDirectores});
   }
-
   reportarEmpleado({ mEmpleado }: { mEmpleado: Cl_mEmpleado }) {
     this.vista.reportarEmpleado({
       dataEmpleado: mEmpleado.toJSON(),

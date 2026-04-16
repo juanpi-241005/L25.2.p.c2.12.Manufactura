@@ -1,21 +1,21 @@
 import Cl_mEmpleado from "./Cl_mEmpleado.js";
 
 export default class Cl_mDirectores extends Cl_mEmpleado{
-    private _turnoNocturno: string = ""
-    constructor({id, nombre, sueldoBase, turnoNocturno}: {id: number, nombre: string, sueldoBase: number, turnoNocturno: string}){
+    private _turnoNocturno: boolean = false;
+    constructor({id, nombre, sueldoBase, turnoNocturno}: {id: number, nombre: string, sueldoBase: number, turnoNocturno: boolean}){
         super({id, nombre, sueldoBase})
         this.turnoNocturno = turnoNocturno
     }
 
-    set turnoNocturno(turnoNocturno: string){
+    set turnoNocturno(turnoNocturno: boolean){
         this._turnoNocturno = turnoNocturno;
     }
-    get turnoNocturno(): string{
+    get turnoNocturno(): boolean{
         return this._turnoNocturno;
     }
 
     adicional(): number{
-        return this.sueldoBase * (this.turnoNocturno === "SI" ? 0.20 : 0);
+        return super.sueldoMensual() * (this.turnoNocturno === true ? 0.20 : 0);
     }
 
     bonus(): number{
@@ -23,7 +23,7 @@ export default class Cl_mDirectores extends Cl_mEmpleado{
     }
 
     sueldoMensual(): number{
-        return this.sueldoBase + this.adicional();
+        return super.sueldoMensual() + this.adicional();
     }
 
     toJSON() {
