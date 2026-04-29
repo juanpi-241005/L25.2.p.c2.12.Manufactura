@@ -12,3 +12,4 @@ empleadosDirectores = [
     { id: 88, nombre: "Emy", sueldoBase: 100, turnoNocturno: false },
 ];
 export { empleadosOperadores, empleadosDirectores };
+//# sourceMappingURL=_data.js.map

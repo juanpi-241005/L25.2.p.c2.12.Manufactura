@@ -1,6 +1,8 @@
-import Cl_mOperadores from "./Cl_mOperadores.js";
-import Cl_mDirectores from "./Cl_mDirectores.js";
+import Cl_mOperadores from "./models/Cl_mOperadores.js";
+import Cl_mDirectores from "./models/Cl_mDirectores.js";
 export default class Cl_controlador {
+    modelo;
+    vista;
     constructor(modelo, vista) {
         this.modelo = modelo;
         this.vista = vista;
@@ -35,3 +37,4 @@ export default class Cl_controlador {
         this.vista.show();
     }
 }
+//# sourceMappingURL=Cl_controlador.js.map

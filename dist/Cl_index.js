@@ -5,13 +5,14 @@ de $5 por cantidad de horas extras trabajadas. A los empleados directivos se les
 un 20% del sueldo si es turno nocturno. Se requiere un programa que determine: a) por empleado
 el sueldo mensual y b) por la empresa: Monto total pagado a sus empleados, Monto adicional pagado
 a operadores y a Directivos.*/
-import Cl_mEmpresa from "./Cl_mEmpresa.js";
+import Cl_mEmpresa from "./models/Cl_mEmpresa.js";
 import Cl_controlador from "./Cl_controlador.js";
-import Cl_vEmpresa from "./Cl_vEmpresa.js";
-import Cl_mOperadores from "./Cl_mOperadores.js";
-import Cl_mDirectores from "./Cl_mDirectores.js";
+import Cl_vEmpresa from "./views/Cl_vEmpresa.js";
+import Cl_mOperadores from "./models/Cl_mOperadores.js";
+import Cl_mDirectores from "./models/Cl_mDirectores.js";
 import { empleadosOperadores, empleadosDirectores } from "./_data.js";
 export default class Cl_index {
+    controlador;
     constructor() {
         let vista = new Cl_vEmpresa();
         let modelo = new Cl_mEmpresa();
@@ -30,3 +31,4 @@ export default class Cl_index {
         this.controlador.procesarEmpleadoDirector(new Cl_mDirectores(empleadosDirectores[3]));
     }
 }
+//# sourceMappingURL=Cl_index.js.map

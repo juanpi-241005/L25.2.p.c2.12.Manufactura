@@ -1,4 +1,4 @@
-import Cl_controlador from "./Cl_controlador.js";
+import Cl_controlador from "../Cl_controlador.js";
 
 export default class Cl_vGeneral {
   private _formName: string = "";
